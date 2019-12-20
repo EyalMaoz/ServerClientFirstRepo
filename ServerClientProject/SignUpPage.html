@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sign Up Page By Eyal Maoz</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="all" href="styles.css" />
+    <script src="javaScript.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body id="SignupBody">
+    <div class="container">
+        <div class=".row" style="padding: 40px;"> </div>
+        <div class="row align-items-center">
+
+            <div class=".col-md-4" id="mainDiv">
+
+                <form autocomplete="off">
+                    <h2 style=" text-align:center; ">Sign Up</h2>
+                    <div class="form-group ">
+                        <!-- Email Field-->
+                        <input type="text" class="form-control " id="email" placeholder="Email Address" style="font-size:large"> <br>
+
+                        <!-- Password Fields-->
+                        <input type="password" class="form-control " id="password" placeholder="Password" style="font-size:large"><br>
+                        <input type="password" class="form-control " id="confPassword" placeholder="Confirm Password" style="font-size:large"><br>
+                        <!-- sign up Button -->
+                        <button class="btn btn-primary " id="signBtn" onclick=OnSignUp() type="submit" value="Sign up" style="font-size:large"> Sign Up</button>
+                        <!-- Link -->
+                        <p style="color:black;font-size:medium"> Already a user?
+                            <a href="LoginPage.html">Login</a>
+
+                        </p>
+                    </div>
+
+                </form>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
