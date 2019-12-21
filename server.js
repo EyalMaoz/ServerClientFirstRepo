@@ -33,22 +33,25 @@ app.get('/contactpage', function(req, res) {
 
 app.get('/', function(req, res) {
 
-    res.send("404 - GTFO.");
+    fs.readFile("LogInPage.html", "UTF-8", function(err, html) {
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end(html);
+    });
 });
 
 app.get('/login', function(req, res) {
-    fs.readFile("../LogInPage.html", "UTF-8", function(err, html) {
+    fs.readFile("LogInPage.html", "UTF-8", function(err, html) {
         res.writeHead(200, { "Content-Type": "text/html" });
         res.end(html);
     });
 });
 app.get('/styles.css', function(req, res) {
-    var fileStream = fs.createReadStream("../styles.css", "UTF-8");
+    var fileStream = fs.createReadStream("styles.css", "UTF-8");
     res.writeHead(200, { "Content-Type": "text/css" });
     fileStream.pipe(res);
 });
 app.get('/javaScript.js', function(req, res) {
-    var fileStream = fs.createReadStream("../javaScript.js", "UTF-8");
+    var fileStream = fs.createReadStream("javaScript.js", "UTF-8");
     res.writeHead(200, { "Content-Type": "text/css" });
     fileStream.pipe(res);
 });
