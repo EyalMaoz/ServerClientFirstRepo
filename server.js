@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var app = express();
-var port = 8080;
+var port = 3000;
 var fs = require('fs');
 
 app.use(bodyParser.json()); // support json encoded bodies
