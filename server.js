@@ -57,5 +57,5 @@ app.get('/javaScript.js', function(req, res) {
 });
 
 // start the server
-app.listen(port);
-console.log('Server started! At http://localhost:' + port)
+app.listen(port || process.env.PORT);
+console.log('Server started!')
