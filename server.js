@@ -57,5 +57,5 @@ app.get('/javaScript.js', function(req, res) {
 });
 
 // start the server
-app.listen(port || process.env.PORT);
+app.listen(process.env.PORT || port);
 console.log('Server started!')
