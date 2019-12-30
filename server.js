@@ -44,6 +44,13 @@ app.get('/', function(req, res) {
         res.end(html);
     });
 });
+app.get('/LoginPage.html', function(req, res) {
+
+    fs.readFile("LogInPage.html", "UTF-8", function(err, html) {
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end(html);
+    });
+});
 
 app.get('/login', function(req, res) {
     fs.readFile("LogInPage.html", "UTF-8", function(err, html) {
