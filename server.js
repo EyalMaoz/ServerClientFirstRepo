@@ -8,7 +8,7 @@ var fs = require('fs');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
-/*app.post('/login', function(req, res) {
+app.post('/', function(req, res) {
     console.log('user logged in');
 
     var email = req.body.email;
@@ -21,11 +21,17 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
         console.log('user faild to log in');
     }
 
-});*/
+});
 
 
 app.get('/contactpage', function(req, res) {
     fs.readFile("ContactPage.html", "UTF-8", function(err, html) {
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end(html);
+    });
+});
+app.get('/SignUpPage.html', function(req, res) {
+    fs.readFile("SignUpPage.html", "UTF-8", function(err, html) {
         res.writeHead(200, { "Content-Type": "text/html" });
         res.end(html);
     });
