@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 
 app.get('/contactpage', function(req, res) {
-    fs.readFile("../ContactPage.html", "UTF-8", function(err, html) {
+    fs.readFile("ContactPage.html", "UTF-8", function(err, html) {
         res.writeHead(200, { "Content-Type": "text/html" });
         res.end(html);
     });
