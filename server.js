@@ -25,6 +25,7 @@ app.post('/', function(req, res) {
 
 
 app.get('/contactpage', function(req, res) {
+    console.log("Login Made.");
     fs.readFile("ContactPage.html", "UTF-8", function(err, html) {
         res.writeHead(200, { "Content-Type": "text/html" });
         res.end(html);
