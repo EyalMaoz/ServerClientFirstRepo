@@ -2,20 +2,22 @@ async function ValidateText() {
 
     var email = document.getElementById('email ').value;
     var password = document.getElementById('password ').value;
+    var xhttp = new XMLHttpRequest();
 
-    if (email.match("Admin") && password.match("Admin")) {
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            if (this.responseText == 'OK') {
+                window.location.href = "https://client-server-proj.herokuapp.com/contactpage";
 
-        window.location.href = "https://client-server-proj.herokuapp.com/contactpage";
-    } else {
-        window.alert("Wrong details");
-        return false;
-    }
+            } else {
+                window.alert("Wrong details");
 
-
-    //Old:
-    //var isPassGood = CheckPassword(password)
-    //var isEmailGood = CheckEmail(email)
-    //window.alert(isPassGood + isEmailGood)
+            }
+        }
+    };
+    xhttp.open("POST", "checkUser", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("email=" + email + "&password=" + password);
 }
 
 function CheckPassword(pass) {
@@ -37,9 +39,13 @@ function CheckEmail(email) {
 }
 
 function OnSignUp() {
+
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
     var confPassword = document.getElementById("confPassword").value;
+    var xhttp = new XMLHttpRequest();
+
+
     if (!CheckEmail(email)) {
         window.alert("Email incorrect form.");
         return;
@@ -52,14 +58,29 @@ function OnSignUp() {
         window.alert("Password doesnt match! Try again");
         return;
     }
-    window.alert("You Did It!\nEmail: " + email + "\nPassword: " + password);
-    window.open("LoginPage.html", "_top", true);
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            if (this.responseText == 'OK') {
+                window.alert("You Did It!\nEmail: " + email + "\nPassword: " + password);
+                window.location.href = "https://client-server-proj.herokuapp.com/";
+
+            } else {
+                window.alert(this.responseText);
+            }
+        }
+    };
+    xhttp.open("POST", "newUser", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("email=" + email + "&password=" + password);
 }
 
 function OnSubmitContact() {
     var email = document.getElementById("email").value;
     var name = document.getElementById("name").value;
     var subject = document.getElementById("subject").value;
+    var xhttp = new XMLHttpRequest();
+
     if (email == "" || name == "" || subject == "") {
         window.alert("Please fill all the forms.");
         return;
@@ -68,7 +89,19 @@ function OnSubmitContact() {
         window.alert("Email incorrect form.");
         return;
     }
-    window.alert("Your request sent!\nName: " + name + "\nEmail: " + email + "\nSubject: " + subject);
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            if (this.responseText == 'OK') {
+                window.alert("Your request sent!\nName: " + name + "\nEmail: " + email + "\nSubject: " + subject);
+
+            } else {
+                window.alert(this.responseText);
+            }
+        }
+    };
+    xhttp.open("POST", "contactusSent", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("email=" + email + "&name=" + name + "&subSubject=" + "TODO" + "&subject=" + subject);
 }
 
 function OnContactSupport() {

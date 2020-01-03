@@ -8,9 +8,7 @@ var fs = require('fs');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
-app.post('/', function(req, res) {
-    console.log('user logged in');
-
+app.post('/checkUser', function(req, res) {
     var email = req.body.email;
     var password = req.body.password;
     if (email.match("Admin") && password.match("Admin")) {
@@ -23,6 +21,33 @@ app.post('/', function(req, res) {
 
 });
 
+app.post('/newUser', function(req, res) {
+    var email = req.body.email;
+    var password = req.body.password;
+    if (email.match("Admin@gmail.com")) {
+        res.send('This User already exist.');
+    } else {
+        res.send('OK');
+        //TODO SEND MAIL
+        console.log('New User Signed up - ' + email);
+    }
+
+});
+
+app.post('/contactusSent', function(req, res) {
+    var email = document.getElementById("email").value;
+    var name = document.getElementById("name").value;
+    var subject = document.getElementById("subject").value;
+
+    //TODO SEND MAIL
+
+    if (true /*mail sent - send ok*/ ) {
+        res.send('OK');
+    } else {
+        res.send('BAD');
+    }
+
+});
 
 app.get('/contactpage', function(req, res) {
     console.log("Login Made.");
@@ -45,20 +70,7 @@ app.get('/', function(req, res) {
         res.end(html);
     });
 });
-app.get('/LoginPage.html', function(req, res) {
 
-    fs.readFile("LogInPage.html", "UTF-8", function(err, html) {
-        res.writeHead(200, { "Content-Type": "text/html" });
-        res.end(html);
-    });
-});
-
-app.get('/login', function(req, res) {
-    fs.readFile("LogInPage.html", "UTF-8", function(err, html) {
-        res.writeHead(200, { "Content-Type": "text/html" });
-        res.end(html);
-    });
-});
 app.get('/styles.css', function(req, res) {
     var fileStream = fs.createReadStream("styles.css", "UTF-8");
     res.writeHead(200, { "Content-Type": "text/css" });
