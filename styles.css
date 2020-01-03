@@ -1,9 +1,9 @@
 #LoginBody {
     background: url(http://papers.co/wallpaper/papers.co-vu30-rock-dark-bw-pattern-texture-cut-black-25-wallpaper.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
 }
 
 #SignupBody {
