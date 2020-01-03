@@ -1,5 +1,6 @@
 #LoginBody {
     background-image: url(http://papers.co/wallpaper/papers.co-vu30-rock-dark-bw-pattern-texture-cut-black-25-wallpaper.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -7,6 +8,7 @@
 
 #SignupBody {
     background-image: url(http://papers.co/wallpaper/papers.co-vu28-rock-dark-bw-pattern-texture-25-wallpaper.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -14,6 +16,7 @@
 
 #ContactBody {
     background-image: url(http://papers.co/wallpaper/papers.co-vx83-metal-dark-pattern-background-25-wallpaper.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
     background-color: black;
     background-attachment: fixed;

@@ -2,19 +2,10 @@ async function ValidateText() {
 
     var email = document.getElementById('email ').value;
     var password = document.getElementById('password ').value;
-    //var URL = "http://localhost:8080/contactpage";
-    var xhttp = new XMLHttpRequest();
-
 
     if (email.match("Admin") && password.match("Admin")) {
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("LoginBody").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET", "contactpage", true);
-        xhttp.send();
-        return xhttp.responseText;
+
+        window.location.href = "https://client-server-proj.herokuapp.com/contactpage";
     } else {
         window.alert("Wrong details");
         return false;
