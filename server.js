@@ -35,9 +35,9 @@ app.post('/newUser', function(req, res) {
 });
 
 app.post('/contactusSent', function(req, res) {
-    var email = document.getElementById("email").value;
-    var name = document.getElementById("name").value;
-    var subject = document.getElementById("subject").value;
+    var email = req.body.email;
+    var name = req.body.name;
+    var subject = req.body.subject;
 
     //TODO SEND MAIL
 
