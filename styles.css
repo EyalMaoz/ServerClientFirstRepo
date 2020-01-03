@@ -1,9 +1,10 @@
 #LoginBody {
     background: url(http://papers.co/wallpaper/papers.co-vu30-rock-dark-bw-pattern-texture-cut-black-25-wallpaper.jpg) no-repeat center center fixed;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-y: scroll;
 }
 
 #SignupBody {
@@ -12,6 +13,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
+    overflow-y: scroll;
 }
 
 #ContactBody {
@@ -21,6 +23,7 @@
     background-color: black;
     background-attachment: fixed;
     background-size: 100% 100%;
+    overflow-y: scroll;
 }
 
 h1 {
